@@ -1,0 +1,59 @@
+        
+    <!-- Sidebar Menu for Desktop and Mobile
+    ============================================= -->
+    <div class="menu-wrap nicescroll">
+        <nav class="menu">
+            <!-- Menu for Mobile
+            ============================================= -->
+            <aside class="side-menu visible-xs visible-sm">
+                <ul class="list-unstyled">
+                    <div ng-include="'/assets/templates/' + rootCtrl.pathLang + '/common/navigation.html'"></div>
+                </ul><!-- list-unstyled -->
+            </aside><!-- side-menu -->
+        </nav><!-- menu -->
+        <button class="close-button hidden-xs" id="close-button">Close Menu</button>
+    </div>
+    
+    <div id="site-header" class="header-style-2">
+        <div class="nav-pages-social hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="nav navbar-nav">
+                            <div ng-include="'/assets/templates/' + rootCtrl.pathLang + '/common/navigation.html'"></div>                          
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="nav navbar-nav menu-right">
+
+                            <!-- Social Icons
+                            ============================================= -->
+                            <li class="social-nav"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-google-plus"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- nav-pages-social -->
+        <div class="logo-advert">
+            <div class="container ">
+                <div class="row">
+                    <div class="row-table-desktop">
+                        <div class="col-sm-3 col-md-4 col-lg-4 col-xs-12 col col-vm">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="toggle-categories menu-button visible-xs" id="open-button"><i class="fa fa-bars"></i><span>Menu</span></button><!-- toggle-categories -->
+                                <a class="navbar-brand" href="/"><img src="/assets/images/logo.png" alt="Tokyo Hackerspace"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-9 col-md-8 col-lg-8 col-xs-12 hidden-xs col col-vm text-right">
+                            
+                            <!-- 970x90 Advertisement
+                            ============================================= -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

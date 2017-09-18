@@ -1,0 +1,56 @@
+.logo-advert {
+  height: 120px !important;
+}
+
+.navbar-brand > img {
+  width: 265px;
+  position: relative;
+  top: -20px; /*when advertisement is in place top is -40 */
+  z-index: 1000;
+}
+
+.widgetize-area.container
+{
+  min-height: 325px !important;
+  height: 325px !important;
+}
+
+.date-block{
+  width: 85px;
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+.date-block ul {
+  border: 1px solid black;
+  color: #fff;
+  background: #000;
+  margin: 0px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.date-block li
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 400px){
+  .navbar-brand > img {
+    width: 170px !important;
+    position: relative;
+    top: -18px;
+    left: 120px;
+  }
+
+  .rsvp-widget {
+    float: none;
+  }
+
+  .rsvp-widget ul {
+    list-style-type: none;
+  }
+}

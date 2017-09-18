@@ -1,0 +1,10 @@
+@-moz-document url-prefix() {
+    .slider-inner .post-title a {height:58px;display:block;text-overflow:ellipsis;white-space: pre-line;}
+    .regular-post .post-info .entry-title a{height:64px;display:block;text-overflow:ellipsis;}
+    .title-overlay-small .post-info .entry-title a {height:36px;display:block;text-overflow:ellipsis;}
+    .cardview-post .post-info .entry-title a {height:48px;display:block;text-overflow:ellipsis;}
+    .title-meta-post .post-info .entry-title a {height:48px;display:block;text-overflow:ellipsis;}
+    .title-meta-post-2 .post-info .entry-title a {height:48px;display:block;text-overflow:ellipsis;}
+    .title-meta-post.tmp-3 .post-info .entry-title a {height:48px;display:block;text-overflow:ellipsis;}
+    .portfolio-item .portfolio-title a {height:48px;display:block;text-overflow:ellipsis;}
+}
