@@ -7,7 +7,6 @@
                     <!-- Post Content
                     ============================================= -->
                     <div class="entry-content single-entry-content">
-                        <p>A hackerspace (often also referred to as a hacklab, makerspace or hackspace) is a community-operated, often "Not For Profit", workspace where people with common interests, often in computers, machining, technology, science, digital art or electronic art, can meet, socialize and collaborate.</p>
                         <div id="attachment_1504" style="width: 847px" class="wp-caption aligncenter">
                             <img class="wp-image-1504 size-full" src="/assets/images/pictures/tsutsutsu.png" width="870" height="490" alt="THS booth at TsuTsuTsu." title="THS booth at TsuTsuTsu." style="border: 1px solid #333;">
                             <p class="wp-caption-text">THS booth at TsuTsuTsu.</p>

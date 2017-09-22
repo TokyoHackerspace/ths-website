@@ -31,8 +31,16 @@
             ============================================= -->
             <aside class="side-menu visible-xs visible-sm">
                 <ul class="list-unstyled">
-                    <?php include_once(APP_DIR . '/templates/' . $lang . '/common/navigation.html'); ?>
+                    <?php include(APP_DIR . '/templates/' . $lang . '/common/navigation.html'); ?>
                 </ul><!-- list-unstyled -->
+                <ul class="list-unstyled">
+                  <?php include(APP_DIR . '/templates/common/lang-selector.html'); ?>
+                </ul>
+                <ul  class="list-unstyled">
+                    <li class="social-nav">
+                      <?php include(APP_DIR . '/templates/common/social_links.html'); ?>
+                    </li>
+                </ul>
             </aside><!-- side-menu -->
         </nav><!-- menu -->
         <button class="close-button hidden-xs" id="close-button">Close Menu</button>
@@ -43,7 +51,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="nav navbar-nav">
-                          <?php include_once(APP_DIR . '/templates/' . $lang . '/common/navigation.html'); ?>
+                          <?php include(APP_DIR . '/templates/' . $lang . '/common/navigation.html'); ?>
                         </ul>
                     </div>
                     <div class="col-md-6">
@@ -53,7 +61,7 @@
                             </li>
                             <li class="search-nav menu-item-has-children">
                               <ul>
-                                <?php include_once(APP_DIR . '/templates/common/lang-selector.html'); ?>
+                                <?php include(APP_DIR . '/templates/common/lang-selector.html'); ?>
                               </ul>
                             </li>
                         </ul>

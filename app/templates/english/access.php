@@ -18,7 +18,7 @@
               <li>From Ikebukuro, take Tobu Tojo local line to Naka-Itabashi station. Typically leaving from Track 4.</li>
               <li>At Naka-Itabashi Station, please use the SOUTH exit.</li>
               <li>Turn RIGHT at the street in front of the bicycle park.</li>
-              <li>At ”Boo ちゃん　らーめん” turn RIGHT</li>
+              <li>At ”Matsuobushi Ramen” turn RIGHT</li>
               <li>Now you have a choice!<br><br>
                 <ul>
                   <li>Follow this street all the way to the river. There is a bridge in front of you crossing a river. Do not cross the river.  Instead turn LEFT. We are the 4th building (the one on the corner)</li>
