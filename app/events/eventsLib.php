@@ -49,7 +49,11 @@ function getImageForEvent($eventName)
 function get_next_event($events)
 {
   global $eventCount;
-  return $events[$eventCount++];
+  if(count($events) > $eventCount)
+  {
+    return $events[$eventCount++];
+  }
+  return array();
 }
   
 //  Try to get data from meetup  
@@ -120,10 +124,13 @@ try
   }
 
   $newEvents = array();
-  foreach($events as $event)
+  if(is_array($events))
   {
-    $event['image'] = getImageForEvent($event['name']);
-    $newEvents[] = $event;
+    foreach($events as $event)
+    {
+      $event['image'] = getImageForEvent($event['name']);
+      $newEvents[] = $event;
+    }
   }
   
   // Update the events array

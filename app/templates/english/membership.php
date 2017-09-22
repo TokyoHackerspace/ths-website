@@ -20,7 +20,6 @@
                           <li><strong>Full Membership</strong> ¥5000/month gives you full access to the hackerspace 24hrs a day, though we ask you to work quietly past 8pm.  Full access to all the tools that are on the premises, and discounts on classes and events that are held at the hackerspace.</li>
                           <li><strong>Student memberships</strong> ¥2500/month give you the same benefits as full members, but at a discounted price. Please be prepared to show proof of your student status.</li>
                         </ul>
-                        
                         <p>For more information <a href="/<?php echo $locale ?>/access"</a>come visit us</a> on either of our weekly meetings Tuesday or Wednesday evening at 7:30pm and talk to one of the members about membership.</p>
 
                         

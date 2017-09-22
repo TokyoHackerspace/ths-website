@@ -23,9 +23,20 @@
     <![endif]-->
 </head>
 <body class="h-style-2">
-        
-
-    
+    <!-- Sidebar Menu for Desktop and Mobile
+    ============================================= -->
+    <div class="menu-wrap nicescroll">
+        <nav class="menu">
+            <!-- Menu for Mobile
+            ============================================= -->
+            <aside class="side-menu visible-xs visible-sm">
+                <ul class="list-unstyled">
+                    <?php include_once(APP_DIR . '/templates/' . $lang . '/common/navigation.html'); ?>
+                </ul><!-- list-unstyled -->
+            </aside><!-- side-menu -->
+        </nav><!-- menu -->
+        <button class="close-button hidden-xs" id="close-button">Close Menu</button>
+    </div>
     <div id="site-header" class="header-style-2">
         <div class="nav-pages-social hidden-xs">
             <div class="container">
