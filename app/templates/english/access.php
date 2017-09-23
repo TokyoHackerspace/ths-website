@@ -15,7 +15,7 @@
             <br>
             <h5>Directions</h5>
             <ol>
-              <li>From Ikebukuro, take Tobu Tojo local line to Naka-Itabashi station. Typically leaving from Track 4.</li>
+              <li>From Ikebukuro, take Tobu Tojo local line to Naka-Itabashi station. Typically leaving from Track 4 or 5.</li>
               <li>At Naka-Itabashi Station, please use the SOUTH exit.</li>
               <li>Turn RIGHT at the street in front of the bicycle park.</li>
               <li>At ”Matsuobushi Ramen” turn RIGHT</li>
