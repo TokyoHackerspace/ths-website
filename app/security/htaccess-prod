@@ -1,0 +1,21 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST}  ^quake.tokyohackerspace.org [nocase]
+RewriteRule ^(.*)$        http://tokyohackerspace.org/wiki [last,redirect=301]
+
+RewriteCond %{HTTP_HOST}  !^tokyohackerspace.org [nocase]
+RewriteRule ^(.*)$        http://tokyohackerspace.org/$1 [last,redirect=301]
+
+RewriteCond ${REQUEST_URI} ^.+$
+RewriteCond %{REQUEST_FILENAME} \.(gif|jpe?g|png|js|css|swf|php|ico|txt|pdf|xml)$ [OR]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -l
+RewriteRule ^ - [L]
+
+RewriteRule ^(.*)$ index.php [L,QSA]
+
+#php_flag display_startup_errors on
+#php_flag display_errors on
+#php_flag html_errors on
+#php_flag log_errors on
