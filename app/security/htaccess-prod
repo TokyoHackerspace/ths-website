@@ -1,10 +1,10 @@
 RewriteEngine On
 
 RewriteCond %{HTTP_HOST}  ^quake.tokyohackerspace.org [nocase]
-RewriteRule ^(.*)$        http://tokyohackerspace.org/wiki [last,redirect=301]
+RewriteRule ^(.*)$        https://tokyohackerspace.org/wiki [last,redirect=301]
 
 RewriteCond %{HTTP_HOST}  !^tokyohackerspace.org [nocase]
-RewriteRule ^(.*)$        http://tokyohackerspace.org/$1 [last,redirect=301]
+RewriteRule ^(.*)$        https://tokyohackerspace.org/$1 [last,redirect=301]
 
 RewriteCond ${REQUEST_URI} ^.+$
 RewriteCond %{REQUEST_FILENAME} \.(gif|jpe?g|png|js|css|swf|php|ico|txt|pdf|xml)$ [OR]
@@ -12,6 +12,9 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d [OR]
 RewriteCond %{REQUEST_FILENAME} -l
 RewriteRule ^ - [L]
+
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
 
 RewriteRule ^(.*)$ index.php [L,QSA]
 
