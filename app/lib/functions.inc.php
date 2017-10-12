@@ -1,5 +1,12 @@
 <?php
  
+function get_hackerspace_status()
+{
+  $cacheFile = APP_DIR . '/events/cache/status.txt';
+  $status = file($cacheFile);
+  return $status[0];
+}
+
 /**
  * Function parses the request_URI and returns the route and the query string in an array
  */ 
@@ -35,7 +42,7 @@ function parseRequestUri()
  */ 
 function processRoute()
 {
-  global $route, $routes, $lang, $locale;
+  global $route, $routes, $lang, $locale, $title;
   
   if(isset($routes[$route]))
   {
@@ -47,6 +54,7 @@ function processRoute()
         header("Location: " . $routeDefinition['uri_path'] . "\n\n");
         exit();
       case 'display':
+        $title = (isset($routeDefinition['title']) && $routeDefinition['title'] != "") ? $routeDefinition['title'] . " | " : "";
         include_once(APP_DIR . "/pages/" . $routeDefinition['page']);
       }
   }
