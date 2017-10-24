@@ -25,17 +25,20 @@ function meetupVenu($venue)
 }
 
 // Get the image for the event from the csv file.
-function getImageForEvent($eventName)
+function getImageForEvent($eventName, $fileContents)
 {
-  global $fileContents;
-  
   $imageName = 'default.jpg';
+
 
   if(is_array($fileContents))
   {
     foreach($fileContents as $fileLine)
     {
       $csvLine = str_getcsv($fileLine, ":");
+$fh = fopen("/tmp/names.log","a+");
+fwrite($fh, $eventName."\n");
+fwrite($fh, $csvLine[0]."\n");
+fclose($fh);
       if($csvLine[0] == $eventName)
       {
         $imageName = $csvLine[2];
@@ -60,7 +63,7 @@ function get_next_event($events)
 try
 {
   $cache_file = APP_DIR . '/events/cache/cache_file.txt';
-  $csvFile =  APP_DIR . '/events/images/images.csv';
+  $csvFile =  APP_DIR . '/events/images.csv';
   $eventsPerPage = 10;
   $pathLang = (isset($_GET['pathLang'])) ? $_GET['pathLang'] : "ja";
 
@@ -128,7 +131,7 @@ try
   {
     foreach($events as $event)
     {
-      $event['image'] = getImageForEvent($event['name']);
+      $event['image'] = getImageForEvent($event['name'], $fileContents);
       $newEvents[] = $event;
     }
   }

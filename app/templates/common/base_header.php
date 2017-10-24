@@ -7,6 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title><?php echo $title; ?> Tokyo Hackerspace</title>
 
+    <link rel=icon href="/assets/images/ths-favicon-circle.png">
+    <link rel="apple-touch-icon" href="/assets/images/ths-favicon-square.png" />
+
     <!-- Bootstrap & Other CSS -->
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:300,400,700" rel="stylesheet">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -23,15 +26,9 @@
     <![endif]-->
 </head>
 <body class="h-style-2">
-  
+  <?php $status = get_hackerspace_status(); ?>
   <div class="container">
-    <?php
-      if(is_readable(APP_DIR . "/events/cache/status.txt"))
-      {
-        $status = get_hackerspace_status();
-        include(APP_DIR . '/templates/' . $lang . '/statuses/' . $status .'.html');
-      }
-    ?>
+   <?php include(APP_DIR . '/templates/' . $lang . '/statuses/' . $status .'.html'); ?>
   </div>
   <div class="menu-wrap nicescroll">
     <nav class="menu">

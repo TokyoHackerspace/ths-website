@@ -31,5 +31,14 @@
       <h1>Tokyo Hackerspace</h1>
       <p>Some message goes here</p>
     </noscript> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108481972-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108481972-1');
+    </script>
   </body>
 </html>

@@ -1,24 +1,26 @@
 RewriteEngine On
 
-RewriteCond %{HTTP_HOST}  ^quake.tokyohackerspace.org [nocase]
-RewriteRule ^(.*)$        https://tokyohackerspace.org/wiki [last,redirect=301]
+#RewriteCond %{HTTP_HOST}  ^quake.tokyohackerspace.org [nocase]
+#RewriteRule ^(.*)$        https://tokyohackerspace.org/wiki [last,redirect=301]
 
-RewriteCond %{HTTP_HOST}  !^tokyohackerspace.org [nocase]
-RewriteRule ^(.*)$        https://tokyohackerspace.org/$1 [last,redirect=301]
+#RewriteCond %{HTTP_HOST}  ^parts.tokyohackerspace.org [nocase]
+#RewriteRule ^(.*)$        https://tokyohackerspace.org/parts [last,redirect=301]
+
+#RewriteCond %{HTTP_HOST}  ^parts.tokyohacker.space [nocase]
+#RewriteRule ^(.*)$        https://tokyohackerspace.org/parts [last,redirect=301]
+
+RewriteCond %{HTTP_HOST}  !^www.tokyohackerspace.org [nocase]
+RewriteRule ^(.*)$        https://www.tokyohackerspace.org/$1 [last,redirect=301]
+
+RewriteCond %{HTTPS} !=on
+RewriteRule /?(.*) https://%{SERVER_NAME}/$1 [R,L]
 
 RewriteCond ${REQUEST_URI} ^.+$
 RewriteCond %{REQUEST_FILENAME} \.(gif|jpe?g|png|js|css|swf|php|ico|txt|pdf|xml)$ [OR]
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d [OR]
 RewriteCond %{REQUEST_FILENAME} -l
-RewriteRule ^ - [L]
+RewriteRule ^ - [R,L]
 
-RewriteCond %{HTTPS} off
-RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
-
+# Make sure everything in this directory goes to index.php
 RewriteRule ^(.*)$ index.php [L,QSA]
-
-#php_flag display_startup_errors on
-#php_flag display_errors on
-#php_flag html_errors on
-#php_flag log_errors on
