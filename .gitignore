@@ -2,4 +2,5 @@
 /app/events/cache
 /app/events/cache/cache_file.txt
 /html/.htaccess
+old.*
 
