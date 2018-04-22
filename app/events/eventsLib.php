@@ -35,10 +35,6 @@ function getImageForEvent($eventName, $fileContents)
     foreach($fileContents as $fileLine)
     {
       $csvLine = str_getcsv($fileLine, ":");
-$fh = fopen("/tmp/names.log","a+");
-fwrite($fh, $eventName."\n");
-fwrite($fh, $csvLine[0]."\n");
-fclose($fh);
       if($csvLine[0] == $eventName)
       {
         $imageName = $csvLine[2];
@@ -80,29 +76,35 @@ try
   // If the cachefile is not recent the rebuild it.
   } else {
   
-    // Create a client.
-    $client = MeetupKeyAuthClient::factory(array('key' => $apiKey));
+    try {
+      // Create a client.
+      $client = MeetupKeyAuthClient::factory(array('key' => $apiKey));
 
-    //Retrieve the Command from Guzzle
-    $command = $client->getCommand('GetGroup', array('urlname' => 'TokyoHackerspace'));
-    $command->prepare();
+      //Retrieve the Command from Guzzle
+      $command = $client->getCommand('GetGroup', array('urlname' => 'TokyoHackerspace'));
+      $command->prepare();
 
-    // Get the response.
-    $response = $command->execute();
-    $groupData = $response->getData();
+      // Get the response.
+      $response = $command->execute();
+      $groupData = $response->getData();
 
-    //Retrieve the Command from Guzzle
-    $command = $client->getCommand('GetEvents', array('group_id' => $groupData['id']));
-    $command->prepare();
+      //Retrieve the Command from Guzzle
+      $command = $client->getCommand('GetEvents', array('group_id' => $groupData['id']));
+      $command->prepare();
 
-    // Get the response.
-    $response = $command->execute();
-    $events = $response->getData();
+      // Get the response.
+      $response = $command->execute();
+      $events = $response->getData();
 
-     // Our cache is out-of-date, so load the data from our remote server,
-     // and also save it over our cache for next time.
-     file_put_contents($cache_file, json_encode($events, true), LOCK_EX);
-     $file = file_get_contents($cache_file);
+       // Our cache is out-of-date, so load the data from our remote server,
+       // and also save it over our cache for next time.
+       file_put_contents($cache_file, json_encode($events, true), LOCK_EX);
+       $file = file_get_contents($cache_file);
+    }
+    catch (\Exception $e)
+    {
+      echo "Unable to connect to MeetupAPI, it's probably an invalid API Key.";
+    }
   }
   
   // Decode the json back into an array
