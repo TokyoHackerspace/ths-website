@@ -28,7 +28,10 @@
 <body class="h-style-2">
   <?php $status = get_hackerspace_status(); ?>
   <div class="container">
-   <?php include(APP_DIR . '/templates/' . $lang . '/statuses/' . $status .'.html'); ?>
+   <?php if(is_file(APP_DIR . '/templates/' . $lang . '/statuses/' . $status .'.html'))
+   {
+     include(APP_DIR . '/templates/' . $lang . '/statuses/' . $status .'.html');
+   }  ?>
   </div>
   <div class="menu-wrap nicescroll">
     <nav class="menu">
